@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>50% OFF - Lottoo App</title>
+
+  <style>
+    :root{
+      --bg:#000;
+      --text:#fff;
+      --muted:rgba(255,255,255,.78);
+
+      --yellow:#ffd54a;
+      --yellow2:#f7c92b;
+
+      --green:#00ff9a;
+      --red:#ff2e2e;
+
+      --gold:#d7b35a;
+      --gold2:#a9852b;
+
+      --card: rgba(255,255,255,.04);
+      --border: rgba(255,255,255,.10);
+
+      --max: 980px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ===== faixa topo (amarela) ===== */
+    .topbar{
+  width:100%;
+  background: linear-gradient(0deg, var(--yellow), var(--yellow2));
+  color:#c40a0a;
+  font-weight:1000;
+  text-align:center;
+  padding: 12px 10px;
+  letter-spacing:.2px;
+  box-shadow: 0 10px 30px rgba(1, 71, 43, 0.726);
+  font-size:14px;
+  line-height:1.2;
+}
+    .topbarBreak{ display:inline; } /* no desktop continua na mesma linha */
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 14px 50px;
+    }
+
+    /* ===== HERO “criativo” ===== */
+    .hero{
+      margin-top: 14px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid var(--border);
+      background: #071a16;
+    }
+
+    /* opção 2: banner construído (caso não use imagem) */
+    .heroBuilt{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 0;
+      padding: 22px 22px 0;
+      align-items:end;
+      background:
+        radial-gradient(900px 420px at 50% 0%, rgba(0,255,154,.12), transparent 55%),
+        radial-gradient(700px 380px at 20% 20%, rgba(255,213,74,.10), transparent 60%),
+        #071a16;
+    }
+
+    .heroTxt{
+      padding-bottom: 18px;
+    }
+
+    .heroAttention{
+      font-size: 44px;
+      font-weight:1000;
+      color: var(--yellow);
+      letter-spacing:1px;
+      margin:0 0 6px;
+      text-transform: uppercase;
+    }
+    .heroAttention small{
+      font-size: 18px;
+      font-weight:900;
+      color: rgba(255,255,255,.85);
+      display:block;
+      margin-top: 10px;
+      letter-spacing:.2px;
+      text-transform:none;
+    }
+
+    .heroTitle{
+      margin:0;
+      font-size: 44px;
+      font-weight:1000;
+      line-height:1.05;
+      text-transform: uppercase;
+    }
+    .heroTitle .yellow{ color: var(--yellow); }
+    .heroTitle .white{ color:#fff; }
+
+    .heroSub{
+      margin: 10px 0 0;
+      font-size: 22px;
+      font-weight:900;
+      color: rgba(255,255,255,.9);
+      text-transform: uppercase;
+    }
+
+    /* ✅ botão do topo (hero) */
+    .heroCTA{
+      margin-top: 18px;
+      display:inline-block;
+      padding: 16px 22px;
+      font-size: 22px;
+      font-weight:1000;
+      color: #f4d77a;
+      background: linear-gradient(0deg, #241803, #110c01);
+      border: 2px solid var(--gold);
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+      border-radius: 14px;
+      text-transform: uppercase;
+      text-decoration:none;
+    }
+    .heroCTA:active{ transform: scale(.99); }
+
+    .heroPerson{
+      display:flex;
+      justify-content:center;
+      align-items:end;
+    }
+
+    .heroPerson img{
+      width: min(360px, 100%);
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 18px 50px rgba(0,0,0,.55));
+    }
+
+    /* ===== Copy ===== */
+    .copy{
+      margin-top: 16px;
+      padding: 10px 4px;
+    }
+
+    .line{
+      font-size: 22px;
+      line-height:1.35;
+      font-weight:900;
+      margin: 14px 0;
+      color: rgba(255,255,255,.92);
+    }
+
+    .green{ color: var(--green); font-weight:1000; }
+    .red{ color: var(--red); font-weight:1000; }
+    .strike{ text-decoration: line-through; text-decoration-thickness: 3px; }
+
+    .block{
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 18px;
+      padding: 18px 16px;
+    }
+
+    .block .line{ margin: 12px 0; }
+
+    /* ===== Timer + CTA ===== */
+    .ctaArea{
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 18px;
+      padding: 18px 16px;
+      text-align:center;
+    }
+
+    .timerLabel{
+      text-transform: uppercase;
+      font-weight:1000;
+      color: var(--red);
+      letter-spacing:.4px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .timer{
+      font-size: 64px;
+      font-weight:1000;
+      color: var(--green);
+      text-shadow: 0 0 18px rgba(0,0,0,.0), 0 0 18px rgba(0,255,154,.18);
+      margin: 0 0 12px;
+    }
+
+    .btn{
+      display:inline-block;
+      width: min(720px, 100%);
+      background: #0f3b33;
+      border: 2px solid var(--gold);
+      color:#fff;
+      text-decoration:none;
+      font-weight:1000;
+      font-size: 22px;
+      padding: 18px 18px;
+      border-radius: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+      text-transform: uppercase;
+      transition: transform .08s ease;
+    }
+    .btn:active{ transform: scale(.99); }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 900px){
+      /* ✅ mobile/tablet: imagem em cima e texto embaixo */
+      .heroBuilt{
+        grid-template-columns: 1fr;
+        padding: 18px 16px 0;
+      }
+      .heroPerson{ order: 0; padding-top: 10px; }
+      .heroTxt{ order: 1; padding-bottom: 18px; text-align:center; }
+      .heroAttention{ font-size: 34px; }
+      .heroTitle{ font-size: 34px; }
+      .heroSub{ font-size: 18px; }
+      .heroCTA{ font-size: 18px; width: 100%; text-align:center; }
+      .line{ font-size: 19px; }
+      .timer{ font-size: 56px; }
+      .btn{ font-size: 19px; }
+    }
+
+    @media (max-width: 520px){
+      .topbar{ font-size: 13px; }
+      /* ✅ quebra de linha só no mobile */
+      .topbarBreak{ display:block; }
+
+      .heroAttention{ font-size: 30px; }
+      .heroTitle{ font-size: 30px; }
+      .line{ font-size: 18px; }
+      .timer{ font-size: 50px; }
+    }
+  </style>
+
+  
+</head>
+
+<body>
+  <div class="topbar">
+    PARABÉNS! VOCÊ GARANTIU A ÚLTIMA VAGA
+    <span class="topbarBreak">COM 50% DE DESCONTO</span>
+  </div>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroBuilt">
+
+        <div class="heroTxt">
+          <div class="heroAttention">⚠️ ATENÇÃO: ⚠️
+            <small>VOCÊ FOI ESCOLHIDO!</small>
+          </div>
+
+          <h2 class="heroTitle">
+            <span class="white">HOJE O ACESSO AO</span><br>
+            <span class="yellow">LOTTO APP</span><br>
+            <span class="white">ESTÁ COM</span> <span class="yellow">50% OFF</span><br>
+            <span class="yellow">DESCONTO IMEDIATO!</span>
+          </h2>
+
+          <div class="heroSub">SÓ POR TEMPO LIMITADO</div>
+
+          <!-- ✅ BOTÃO DO TOPO (clicável) -->
+          <a class="heroCTA" href="https://pay.cakto.com.br/32gtwb2_785280">QUERO O DESCONTO AGORA</a>
+        </div>
+
+        <div class="heroPerson">
+          <!-- troque o src se precisar -->
+          <img src="images/homem-loto.png" alt="Apresentador segurando celular" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COPY -->
+    <section class="copy">
+      <div class="block">
+        <div class="line">🎉 <span class="green">Parabéns!</span> Você é o nosso cliente número 5... e acaba de conquistar a <span class="green">última vaga deste ano!</span></div>
+
+        <div class="line">E como forma de comemoração, você acaba de ganhar <span class="green">50% de DESCONTO IMEDIATO</span> no Lottoo App.</div>
+
+        <div class="line">O mesmo método que me fez acertar <span class="green">131 vezes</span>, e colocar <span class="green">+ de 200 milhões</span> no meu bolso só em <span class="green">2025</span>!</div>
+
+        <div class="line">💰 O acesso completo, que normalmente custa <span class="red strike">R$ 197,90</span> sai HOJE para você por apenas:</div>
+
+        <div class="line">👉 <span class="green">R$ 73,90</span> à vista ou em até <span class="green">12x de R$ 7,39</span></div>
+
+        <div class="line"><b>Mas atenção:</b></div>
+        <div class="line">⏳ Essa condição é exclusiva, relâmpago e intransferível.</div>
+      </div>
+
+      <div class="block">
+        <div class="line"><span class="red">Você tem apenas 10 minutos</span> para garantir esse preço especial.</div>
+
+        <div class="line">Após esse tempo, a oferta volta ao valor normal e <span class="red">será liberada para o próximo visitante.</span></div>
+
+        <div class="line">🎯 Se você está vendo essa página, é porque ainda tem chance.</div>
+
+        <div class="line">Mas se fechar agora... perdeu, e seu desconto vai ser passado para o próximo visitante.</div>
+
+        <div class="line">⚡ <span class="green">Clique no botão abaixo para ativar o desconto</span> e começar a usar o sistema.</div>
+
+        <div class="line">👉 Aproveite agora ou continue jogando errado, como sempre.</div>
+      </div>
+    </section>
+
+    <!-- TIMER + CTA -->
+    <section class="ctaArea">
+      <div class="timerLabel">⏳ Tempo restante <br>para garantir o desconto</div>
+      <div class="timer" id="timer">10:00</div>
+
+      <!-- ✅ BOTÃO DE BAIXO -->
+       <a class="heroCTA" href="https://pay.cakto.com.br/32gtwb2_785280">QUERO O DESCONTO AGORA</a>
+        </div>
+  </main>
+
+  <script>
+    // Timer 10min com persistência
+    (function(){
+      const TOTAL = 10 * 60;
+      const el = document.getElementById("timer");
+      const key = "lotto_discount_timer_v3_started_at";
+
+      let startedAt = Number(localStorage.getItem(key));
+      if (!startedAt) {
+        startedAt = Date.now();
+        localStorage.setItem(key, String(startedAt));
+      }
+
+      function tick(){
+        const elapsed = Math.floor((Date.now() - startedAt)/1000);
+        const remaining = Math.max(0, TOTAL - elapsed);
+        const mm = String(Math.floor(remaining/60)).padStart(2,"0");
+        const ss = String(remaining%60).padStart(2,"0");
+        el.textContent = `${mm}:${ss}`;
+        if (remaining <= 0) return;
+        setTimeout(tick, 500);
+      }
+      tick();
+    })();
+  </script>
+</body>
+</html>
